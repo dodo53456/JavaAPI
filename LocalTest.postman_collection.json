@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "a348c87f-1897-425f-8e16-785ae6352dd2",
+		"name": "LocalTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "0. Create DB Schema",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/JavaAPI/rest/createDatabase",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"JavaAPI",
+						"rest",
+						"createDatabase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1. Add Friend Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"friends\":\n    [\n      \"john@example.com\",\n      \"andy@example.com\"\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/JavaAPI/rest/addFriend",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"JavaAPI",
+						"rest",
+						"addFriend"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Get Friend List",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"andy@example.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/JavaAPI/rest/getFriendList",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"JavaAPI",
+						"rest",
+						"getFriendList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Get Commen Friends",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"friends\":\n    [\n      \"john@example.com\",\n      \"andy@example.com\"\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/JavaAPI/rest/getCommonFriends",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"JavaAPI",
+						"rest",
+						"getCommonFriends"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Subscribe Updates",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"requestor\": \"lisa@example.com\",\n  \"target\": \"john@example.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/JavaAPI/rest/subscribeUpdates",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"JavaAPI",
+						"rest",
+						"subscribeUpdates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Block Updates",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"requestor\": \"andy@example.com\",\n  \"target\": \"john@example.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/JavaAPI/rest/blockUpdates",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"JavaAPI",
+						"rest",
+						"blockUpdates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. Get Update Distribution List",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"sender\": \"john@example.com\",\n \"text\": \"Hello World! kate@example.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/JavaAPI/rest/getUpdateDistributionList",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"JavaAPI",
+						"rest",
+						"getUpdateDistributionList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test Print All Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/JavaAPI/rest/readAllUsers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"JavaAPI",
+						"rest",
+						"readAllUsers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
